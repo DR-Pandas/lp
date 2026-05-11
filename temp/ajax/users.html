@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Users List</title>
+
+    <link rel="stylesheet"
+    href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+    <style>
+
+        body{
+            background:#f2f2f2;
+        }
+
+        .container{
+            margin-top:50px;
+            background:white;
+            padding:30px;
+            border-radius:10px;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <h2 class="text-center">
+        Registered Users
+    </h2>
+
+    <br>
+
+    <table class="table table-bordered">
+
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Password</th>
+            </tr>
+        </thead>
+
+        <tbody id="table_data">
+
+        </tbody>
+
+    </table>
+
+</div>
+
+<script>
+
+let users = JSON.parse(localStorage.getItem("users")) || [];
+
+let tableData = "";
+
+users.forEach(function(user){
+
+    tableData += `
+    <tr>
+        <td>${user.name}</td>
+        <td>${user.email}</td>
+        <td>${user.password}</td>
+    </tr>
+    `;
+});
+
+document.getElementById("table_data").innerHTML = tableData;
+
+</script>
+
+</body>
+</html>
