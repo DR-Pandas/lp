@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Registration Form</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+
+<body>
+
+<h2>User Registration</h2>
+
+Name:
+<input type="text" id="name"><br><br>
+
+Email:
+<input type="email" id="email"><br><br>
+
+Password:
+<input type="password" id="password"><br><br>
+
+<button onclick="saveData()">Register</button>
+
+<script>
+
+function saveData()
+{
+    let name = document.getElementById("name").value;
+    let email = document.getElementById("email").value;
+    let password = document.getElementById("password").value;
+
+    // Array + Local Storage
+    let users = JSON.parse(localStorage.getItem("users")) || [];
+
+    users.push({
+        name:name,
+        email:email,
+        password:password
+    });
+
+    localStorage.setItem("users", JSON.stringify(users));
+
+    // AJAX POST METHOD
+    $.ajax({
+        url:"https://jsonplaceholder.typicode.com/posts",
+        type:"POST",
+
+        data:{
+            name:name,
+            email:email,
+            password:password
+        },
+
+        success:function()
+        {
+            alert("Registration Successful");
+            window.location.href="users.html";
+        }
+    });
+}
+
+</script>
+
+</body>
+</html>
