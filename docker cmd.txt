@@ -1,0 +1,74 @@
+# =========================
+# 1. Check Docker version
+# =========================
+docker -v
+
+
+# =========================
+# 2. Pull JDK image
+# =========================
+docker pull openjdk:27-ea-trixie
+
+
+# =========================
+# 3. List images
+# =========================
+docker images
+
+
+# =========================
+# 4. Remove image
+# =========================
+docker rmi openjdk:27-ea-trixie
+
+
+# =========================
+# 5. Check running containers
+# =========================
+docker ps
+docker ps -a
+
+
+# =========================
+# 6. Run container (detached mode)
+# =========================
+docker run --name JAVA -it -d openjdk:27-ea-trixie
+docker run --name KARTIK -it -d openjdk:27-ea-trixie
+docker run --name hello -it -d openjdk:27-ea-trixie
+
+
+# =========================
+# 7. Enter JShell inside container
+# =========================
+docker exec -it JAVA jshell
+
+
+# =========================
+# 8. JShell commands
+# =========================
+System.out.println("hello")
+
+
+# =========================
+# 9. Exit JShell
+# =========================
+/exit
+
+
+# =========================
+# 10. Stop container
+# =========================
+docker stop JAVA
+docker stop hello
+
+
+# =========================
+# 11. Start container
+# =========================
+docker start JAVA
+
+
+# =========================
+# 12. Remove container
+# =========================
+docker rm hello

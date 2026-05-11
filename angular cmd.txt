@@ -1,0 +1,88 @@
+# =========================
+# 1. Install Angular CLI
+# =========================
+npm install -g @angular/cli
+
+
+# =========================
+# 2. Check Angular version
+# =========================
+ng version
+
+
+# =========================
+# 3. Create new Angular project
+# =========================
+ng new simple-app
+
+
+# =========================
+# 4. Go to project folder
+# =========================
+cd simple-app
+
+
+# =========================
+# 5. Run Angular app
+# =========================
+ng serve
+
+
+# Open in browser:
+# http://localhost:4200
+
+
+# =========================
+# 6. Create component
+# =========================
+ng generate component home
+
+
+# Short form:
+ng g c home
+
+
+# =========================
+# 7. Create service
+# =========================
+ng generate service myservice
+
+
+# Short form:
+ng g s myservice
+
+
+# =========================
+# 8. Build project
+# =========================
+ng build
+
+
+# =========================
+# 9. Run tests
+# =========================
+ng test
+
+
+# =========================
+# 10. Lint check
+# =========================
+ng lint
+
+
+# =========================
+# 11. Generate module
+# =========================
+ng generate module mymodule
+
+
+# =========================
+# 12. Add routing (if needed)
+# =========================
+ng generate module app-routing --flat --module=app
+
+
+ng new simple-app
+cd simple-app
+ng g c home
+ng serve

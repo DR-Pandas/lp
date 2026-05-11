@@ -1,0 +1,64 @@
+npm init -y
+npm install express
+node server.js
+
+
+# =========================
+# 1. Initialize Node project
+# =========================
+npm init -y
+
+
+# =========================
+# 2. Install Express (static server)
+# =========================
+npm install express
+
+project/
+│── public/
+│    ├── index.html
+│    ├── style.css
+│── server.js
+│── package.json
+
+// =========================
+// server.js (Static Server)
+// =========================
+
+const express = require("express");
+const path = require("path");
+
+const app = express();
+
+// Serve static files from public folder
+app.use(express.static(path.join(__dirname, "public")));
+
+// Start server
+app.listen(3000, () => {
+    console.log("Server running at http://localhost:3000");
+});
+
+
+
+<!-- =========================
+     public/index.html
+     ========================= -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Static Website</title>
+</head>
+<body>
+    <h1>Welcome to My Static Website 🚀</h1>
+</body>
+</html>
+
+
+# =========================
+# 3. Run server
+# =========================
+node server.js
+
+
+
+http://localhost:3000

@@ -1,0 +1,97 @@
+# =========================
+# 1. Git Configuration
+# =========================
+git config --global user.name "Your Name"
+git config --global user.email "you@example.com"
+git config --list
+
+
+# =========================
+# 2. Initialize Repository
+# =========================
+git init
+
+
+# =========================
+# 3. Clone Repository
+# =========================
+git clone https://github.com/user/repo.git
+
+
+# =========================
+# 4. Check Status
+# =========================
+git status
+
+
+# =========================
+# 5. Add Files to Staging
+# =========================
+git add filename
+git add .
+
+
+# =========================
+# 6. Commit Changes
+# =========================
+git commit -m "Your commit message"
+
+
+# =========================
+# 7. Push to GitHub
+# =========================
+git push origin main
+# or
+git push origin master
+
+
+# =========================
+# 8. Pull Updates
+# =========================
+git pull origin main
+
+
+# =========================
+# 9. Branching
+# =========================
+git branch feature1
+git checkout feature1
+# OR (modern)
+git switch feature1
+
+git checkout -b feature1   # create + switch
+
+
+# =========================
+# 10. Merge Branch
+# =========================
+git merge feature1
+
+
+# =========================
+# 11. View History
+# =========================
+git log
+git log --oneline
+
+
+# =========================
+# 12. Undo Changes
+# =========================
+git reset filename
+git checkout -- filename
+
+
+# =========================
+# 13. Remote Connection
+# =========================
+git remote add origin https://github.com/user/repo.git
+git remote -v
+
+
+# =========================
+# 14. Basic Workflow
+# =========================
+git add .
+git commit -m "update"
+git push origin main
