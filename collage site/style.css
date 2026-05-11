@@ -1,0 +1,29 @@
+#desktop-sidebar {
+    transition: left 0.3s;
+}
+
+.main-content {
+    transition: margin-left 0.3s;
+}
+
+/* Initially hide desktop sidebar on small screens, but since it's d-none d-md-block, CSS not needed */
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .main-content {
+        margin-left: 0 !important;
+    }
+}
+
+.content-section {
+    display: none;
+}
+
+.content-section.active {
+    display: block;
+}
+
+.nav-link.active {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
+}
